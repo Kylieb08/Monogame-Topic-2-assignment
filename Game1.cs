@@ -59,14 +59,17 @@ namespace Monogame_Topic_2_assignment
             _spriteBatch.Begin();
 
             _spriteBatch.Draw(buildingTexture, buildingRect, Color.DarkGray);
-            //_spriteBatch.Draw(windowTexture, windowRect, Color.Yellow);
-            for (int y = 0; y < 4; y++)
+            //for (int y = 0; y < 4; y++)
+            //{
+            //    for (int i = 0; i < 3; i++)
+            //    {
+            //        _spriteBatch.Draw(windowTexture, new Rectangle(i * 95 + windowX, 35, 80, 80), Color.Yellow);
+            //    }
+            //    _spriteBatch.Draw(windowTexture, new Rectangle(35, y * 95 + windowY, 80, 80), Color.Yellow);
+            //}
+            for (int i = 0; i < 3; i++)
             {
-                for (int i = 0; i < 3; i++)
-                {
-                    _spriteBatch.Draw(windowTexture, new Rectangle(i * 95 + windowX, 35, 80, 80), Color.Yellow);
-                }
-                _spriteBatch.Draw(windowTexture, new Rectangle(35, y * 95 + windowY, 80, 80), Color.Yellow);
+                _spriteBatch.Draw(windowTexture, new Rectangle(i * 95 + windowX, 35, 80, 425), Color.Yellow);
             }
 
             _spriteBatch.End();
