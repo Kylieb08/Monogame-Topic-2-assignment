@@ -26,7 +26,7 @@ namespace Monogame_Topic_2_assignment
             _graphics.PreferredBackBufferHeight = 500;
             this.Window.Title = "Topic 2 Assignment";
 
-            buildingRect = new Rectangle(20, 20, 350, 480);
+            buildingRect = new Rectangle(20, 20, 300, 480);
             windowRect = new Rectangle(35, 35, 80, 80);
 
             base.Initialize();
@@ -59,10 +59,10 @@ namespace Monogame_Topic_2_assignment
             _spriteBatch.Begin();
 
             _spriteBatch.Draw(buildingTexture, buildingRect, Color.DarkGray);
-            _spriteBatch.Draw(windowTexture, windowRect, Color.Yellow);
-            for (int i = 0; i < 2; i++)
+            //_spriteBatch.Draw(windowTexture, windowRect, Color.Yellow);
+            for (int i = 0; i < 3; i++)
             {
-                _spriteBatch.Draw(windowTexture, new Rectangle(i * 15 + windowX, i * 15 + windowY, 80, 80));
+                _spriteBatch.Draw(windowTexture, new Rectangle(i * 95 + windowX, 35, 80, 80), Color.Yellow);
             }
 
             _spriteBatch.End();
