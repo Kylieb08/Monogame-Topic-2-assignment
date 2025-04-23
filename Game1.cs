@@ -8,6 +8,9 @@ namespace Monogame_Topic_2_assignment
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        Texture2D buildingTexture, windowTexture;
+        Rectangle buildingRect, windowRect;
+        int windowX = 35, windowY = 35;
 
         public Game1()
         {
@@ -19,6 +22,12 @@ namespace Monogame_Topic_2_assignment
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            _graphics.PreferredBackBufferWidth = 800;
+            _graphics.PreferredBackBufferHeight = 500;
+            this.Window.Title = "Topic 2 Assignment";
+
+            buildingRect = new Rectangle(20, 20, 350, 480);
+            windowRect = new Rectangle(35, 35, 80, 80);
 
             base.Initialize();
         }
@@ -28,6 +37,8 @@ namespace Monogame_Topic_2_assignment
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            buildingTexture = Content.Load<Texture2D>("rectangle");
+            windowTexture = Content.Load<Texture2D>("rectangle");
         }
 
         protected override void Update(GameTime gameTime)
@@ -45,6 +56,16 @@ namespace Monogame_Topic_2_assignment
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            _spriteBatch.Begin();
+
+            _spriteBatch.Draw(buildingTexture, buildingRect, Color.DarkGray);
+            _spriteBatch.Draw(windowTexture, windowRect, Color.Yellow);
+            for (int i = 0; i < 2; i++)
+            {
+                _spriteBatch.Draw(windowTexture, new Rectangle(i * 15 + windowX, i * 15 + windowY, 80, 80));
+            }
+
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
