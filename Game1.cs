@@ -8,8 +8,8 @@ namespace Monogame_Topic_2_assignment
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        Texture2D buildingTexture, windowTexture, windowSeperatorTexture;
-        Rectangle buildingRect;
+        Texture2D buildingTexture, windowTexture, windowSeperatorTexture, doorTexture, doorknobTexture;
+        Rectangle buildingRect, doorRect, doorknobRect;
         int windowX = 35, windowSeperatorY = 100;
 
         public Game1()
@@ -27,6 +27,8 @@ namespace Monogame_Topic_2_assignment
             this.Window.Title = "Topic 2 Assignment";
 
             buildingRect = new Rectangle(20, 20, 300, 480);
+            doorRect = new Rectangle(130, 350, 80, 130);
+            doorknobRect = new Rectangle(195, 410, 10, 10);
 
             base.Initialize();
         }
@@ -39,6 +41,8 @@ namespace Monogame_Topic_2_assignment
             buildingTexture = Content.Load<Texture2D>("rectangle");
             windowTexture = Content.Load<Texture2D>("rectangle");
             windowSeperatorTexture = Content.Load<Texture2D>("rectangle");
+            doorTexture = Content.Load<Texture2D>("rectangle");
+            doorknobTexture = Content.Load<Texture2D>("circle");
         }
 
         protected override void Update(GameTime gameTime)
@@ -67,6 +71,8 @@ namespace Monogame_Topic_2_assignment
             {
                 _spriteBatch.Draw(windowSeperatorTexture, new Rectangle(20, i * 80 + windowSeperatorY, 300, 15), Color.DarkGray);
             }
+            _spriteBatch.Draw(doorTexture, doorRect, Color.SaddleBrown);
+            _spriteBatch.Draw(doorknobTexture, doorknobRect, Color.LightGoldenrodYellow);
 
             _spriteBatch.End();
 
