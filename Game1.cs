@@ -10,7 +10,7 @@ namespace Monogame_Topic_2_assignment
         private SpriteBatch _spriteBatch;
         Texture2D buildingTexture, windowTexture, windowSeperatorTexture;
         Rectangle buildingRect;
-        int windowX = 35, windowSeperatorY = 115;
+        int windowX = 35, windowSeperatorY = 100;
 
         public Game1()
         {
@@ -59,19 +59,11 @@ namespace Monogame_Topic_2_assignment
             _spriteBatch.Begin();
 
             _spriteBatch.Draw(buildingTexture, buildingRect, Color.DarkGray);
-            //for (int y = 0; y < 4; y++)
-            //{
-            //    for (int i = 0; i < 3; i++)
-            //    {
-            //        _spriteBatch.Draw(windowTexture, new Rectangle(i * 95 + windowX, 35, 80, 80), Color.Yellow);
-            //    }
-            //    _spriteBatch.Draw(windowTexture, new Rectangle(35, y * 95 + windowY, 80, 80), Color.Yellow);
-            //}
             for (int i = 0; i < 3; i++)
             {
-                _spriteBatch.Draw(windowTexture, new Rectangle(i * 95 + windowX, 35, 80, 425), Color.Yellow);
+                _spriteBatch.Draw(windowTexture, new Rectangle(i * 95 + windowX, 35, 80, 400), Color.Yellow);
             }
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 5; i++)
             {
                 _spriteBatch.Draw(windowSeperatorTexture, new Rectangle(20, i * 80 + windowSeperatorY, 300, 15), Color.DarkGray);
             }
